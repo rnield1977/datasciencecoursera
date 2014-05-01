@@ -1,0 +1,17 @@
+{
+    "contents" : "pollutantmean <- function(directory, pollutant, id = 1:332) {\n  ## 'directory' is a character vector of length 1 indicating\n  ## the location of the CSV files\n  \n  ## 'pollutant' is a character vector of length 1 indicating\n  ## the name of the pollutant for which we will calculate the\n  ## mean; either \"sulfate\" or \"nitrate\".\n  \n  ## 'id' is an integer vector indicating the monitor ID numbers\n  ## to be used\n  \n  ## Return the mean of the pollutant across all monitors list\n  ## in the 'id' vector (ignoring NA values)\n  names <- c(\"Date\",\"sulfate\",\"nitrate\",\"ID\")\n  completemerge <- data.frame(Date=as.Date(character()),\n                         sulfate=as.numeric(), \n                         nitrate=as.numeric(), \n                         ID=as.numeric()) \n  \n  for (i in id){\n    \n    if (nchar(i) == 1){\n      i = paste(\"00\",i, sep = \"\");\n    }else if (nchar(i) == 2){\n      i = paste(\"0\",i, sep = \"\");\n    }\n    csv <- read.csv(paste(directory,\"/\",i,\".csv\", sep = \"\"))\n    completemerge <- rbind(completemerge,csv)\n    \n  }\n  \n  # Now filter the polutants\n  #pSubset <- subset(complete, ID == id);\n  #dim(pSubset)\n  \n  if (pollutant == \"sulfate\"){\n    ret <- mean(completemerge$sulfate, na.rm = TRUE)\n  }else if (pollutant == \"nitrate\"){\n    ret <- mean(completemerge$nitrate, na.rm = TRUE)\n  }\n  return(ret)\n  \n}\n\n\n\n\n\n ",
+    "created" : 1398720760280.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3738039927",
+    "id" : "E86341D8",
+    "lastKnownWriteTime" : 1397066452,
+    "path" : "C:/Users/rnield/Desktop/code/datasciencecoursera/rprogramming/week2/pollutantmean.R",
+    "project_path" : "pollutantmean.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

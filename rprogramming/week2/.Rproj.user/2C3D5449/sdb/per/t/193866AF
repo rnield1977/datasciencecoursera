@@ -1,0 +1,17 @@
+{
+    "contents" : "complete <- function(directory, id = 1:332) {\n  \n  ## 'directory' is a character vector of length 1 indicating\n  ## the location of the CSV files\n  \n  ## 'id' is an integer vector indicating the monitor ID numbers\n  ## to be used\n  \n  ## Return a data frame of the form:\n  ## id nobs\n  ## 1  117\n  ## 2  1041\n  ## ...\n  ## where 'id' is the monitor ID number and 'nobs' is the\n  ## number of complete cases\n  names <- c(\"Date\",\"sulfate\",\"nitrate\",\"ID\")\n \n  completemerge <- data.frame(Date=as.Date(character()),\n                              sulfate=as.numeric(), \n                              nitrate=as.numeric(), \n                              ID=as.numeric()) \n  \n  for (i in id){\n    \n    if (nchar(i) == 1){\n      i = paste(\"00\",i, sep = \"\");\n    }else if (nchar(i) == 2){\n      i = paste(\"0\",i, sep = \"\");\n    }\n    csv <- read.csv(paste(directory,\"/\",i,\".csv\", sep = \"\"))\n    if (nrow(csv) > 0){\n      completemerge <- rbind(completemerge,csv)\n    }\n    \n  }\n  \n  \n  completecases <- complete.cases(completemerge);\n  cc <- completemerge[completecases,]\n  #names <- c(\"id\",\"nobs\");\n  #library(plyr)\n  \n  ret <- data.frame(id=as.numeric(),nobs=as.numeric()); \n\n  for (i in id){\n    \n    row <- (c(i,sum(cc$ID == i)));\n    #print(row)\n    ret <- rbind(ret,row)\n  }\n  #ret <- colnames(names)\n  #colnames(ret) <- names\n  colnames(ret) <- c(\"id\",\"nobs\")\n  \n  return(ret)\n}  ",
+    "created" : 1398720759039.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3032128164",
+    "id" : "193866AF",
+    "lastKnownWriteTime" : 1397685802,
+    "path" : "C:/Users/rnield/Desktop/code/datasciencecoursera/rprogramming/week2/complete.R",
+    "project_path" : "complete.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
