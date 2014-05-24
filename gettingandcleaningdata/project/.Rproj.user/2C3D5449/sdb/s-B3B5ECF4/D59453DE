@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1400956961609.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "D59453DE",
+    "lastKnownWriteTime" : 13229740524830817,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "tidystage1",
+        "contentUrl" : "content?title=tidystage1&file=dc7bf91271314a38a40a3b9098c29c3f.htm",
+        "displayedObservations" : "1000",
+        "displayedVariables" : 81,
+        "totalObservations" : "10299",
+        "variables" : "68"
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

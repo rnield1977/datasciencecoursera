@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1399584035334.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "17FE8508",
+    "lastKnownWriteTime" : 7741240722073845761,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "PollingData",
+        "contentUrl" : "content?title=PollingData&file=ec24d2193c2c4c85b85b27d0a708be09.htm",
+        "displayedObservations" : 145,
+        "displayedVariables" : 7,
+        "totalObservations" : 145,
+        "variables" : 7
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

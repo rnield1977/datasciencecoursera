@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1400621396214.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "8E3E501B",
+    "lastKnownWriteTime" : 2334675641735670882,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "GDP",
+        "contentUrl" : "content?title=GDP&file=8b9ecccb446047a8b72d2edd9dc358ab.htm",
+        "displayedObservations" : "330",
+        "displayedVariables" : 10,
+        "totalObservations" : "330",
+        "variables" : "10"
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

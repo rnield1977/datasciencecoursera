@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1400956157087.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "C7B0F5B7",
+    "lastKnownWriteTime" : 13229740524830817,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "subMergeX",
+        "contentUrl" : "content?title=subMergeX&file=8395376f675941b5bf7faf734e386f56.htm",
+        "displayedObservations" : "1000",
+        "displayedVariables" : 79,
+        "totalObservations" : "10299",
+        "variables" : "66"
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

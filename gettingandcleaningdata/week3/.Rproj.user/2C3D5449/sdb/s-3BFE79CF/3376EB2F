@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1400520557047.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "3376EB2F",
+    "lastKnownWriteTime" : 7741240723082584096,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "acs",
+        "contentUrl" : "content?title=acs&file=333b91ac0c404c2b9b94e156957dac69.htm",
+        "displayedObservations" : 1000,
+        "displayedVariables" : 100,
+        "totalObservations" : 6496,
+        "variables" : 188
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

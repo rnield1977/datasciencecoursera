@@ -1,0 +1,17 @@
+{
+    "contents" : "acs <- read.csv(\"C:\\\\Users\\\\rnield\\\\AppData\\\\Local\\\\Temp\\\\RtmpOk8Avu\\\\data32c45bffdb8\")\n#agricultureLogical <- subset(acs, AGS == 6 & ACR == 3)\n\nagricultureLogical <- (acs$AGS == 6 & acs$ACR == 3)\nwhich(agricultureLogical)\n",
+    "created" : 1400520519753.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3752002222",
+    "id" : "1C4D0FAC",
+    "lastKnownWriteTime" : 1400524046,
+    "path" : "C:/Users/rnield/Desktop/code/datasciencecoursera/gettingandcleaningdata/week3/week3.R",
+    "project_path" : "week3.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

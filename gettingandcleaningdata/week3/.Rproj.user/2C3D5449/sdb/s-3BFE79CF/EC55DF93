@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1400523910732.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "EC55DF93",
+    "lastKnownWriteTime" : 13229740524830817,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "agricultureLogical",
+        "contentUrl" : "content?title=agricultureLogical&file=77e1ceaa13184d2b8d17861651309386.htm",
+        "displayedObservations" : "1000",
+        "displayedVariables" : 100,
+        "totalObservations" : "1113",
+        "variables" : "188"
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1400715803417.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5A394A1",
+    "lastKnownWriteTime" : 7741240722073845761,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "mergedX",
+        "contentUrl" : "content?title=mergedX&file=04f6d63333ed4fe5a54a06bd9c665279.htm",
+        "displayedObservations" : "1000",
+        "displayedVariables" : 100,
+        "totalObservations" : "10299",
+        "variables" : "561"
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

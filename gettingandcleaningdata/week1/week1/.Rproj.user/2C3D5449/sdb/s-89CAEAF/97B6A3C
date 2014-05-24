@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1399566557208.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "97B6A3C",
+    "lastKnownWriteTime" : 7741240722073845761,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "climate_change",
+        "contentUrl" : "content?title=climate_change&file=60b57ff614644b659269c97af0e46d6c.htm",
+        "displayedObservations" : "308",
+        "displayedVariables" : 11,
+        "totalObservations" : "308",
+        "variables" : "11"
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

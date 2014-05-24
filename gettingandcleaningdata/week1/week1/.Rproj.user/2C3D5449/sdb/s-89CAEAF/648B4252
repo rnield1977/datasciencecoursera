@@ -1,0 +1,16 @@
+{
+    "contents" : "# Week 4 - \"Judge, Jury, and Classifier\" Lecture\n\n\n# VIDEO 4\n\n# Read in the data\nstevens = read.csv(\"stevens.csv\")\nstr(stevens)\n\n# Split the data\nlibrary(caTools)\nset.seed(3000)\nsplit = sample.split(stevens$Reverse, SplitRatio = 0.7)\nTrain = subset(stevens, split==TRUE)\nTest = subset(stevens, split==FALSE)\n\n# Install rpart library\ninstall.packages(\"rpart\")\nlibrary(rpart)\ninstall.packages(\"rpart.plot\")\nlibrary(rpart.plot)\n\n# CART model\nStevensTree = rpart(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, method=\"class\", data = Train, control=rpart.control(minbucket=25))\nprp(StevensTree)\n\n# Make predictions\nPredictCART = predict(StevensTree, newdata = Test, type = \"class\")\ntable(Test$Reverse, PredictCART)\n(41+71)/(41+36+22+71)\n\n# ROC curve\nlibrary(ROCR)\n\nPredictROC = predict(StevensTree, newdata = Test)\nPredictROC\n\npred = prediction(PredictROC[,2], Test$Reverse)\nperf = performance(pred, \"tpr\", \"fpr\")\nplot(perf)\n\n\n\n# VIDEO 5 - Random Forests\n\n# Install randomForest package\ninstall.packages(\"randomForest\")\nlibrary(randomForest)\n\n# Build random forest model\nStevensForest = randomForest(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, data = Train, ntree=200, nodesize=25 )\n\n# Convert outcome to factor\nTrain$Reverse = as.factor(Train$Reverse)\nTest$Reverse = as.factor(Test$Reverse)\n\n# Try again\nStevensForest = randomForest(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, data = Train, ntree=200, nodesize=25 )\n\n# Make predictions\nPredictForest = predict(StevensForest, newdata = Test)\ntable(Test$Reverse, PredictForest)\n(40+74)/(40+37+19+74)\n\n\n\n# VIDEO 6\n\n# Install cross-validation packages\ninstall.packages(\"caret\")\nlibrary(caret)\ninstall.packages(\"e1071\")\nlibrary(e1071)\n\n# Define cross-validation experiment\nfitControl = trainControl( method = \"cv\", number = 10 )\ncartGrid = expand.grid( .cp = (1:50)*0.01) \n\n# Perform the cross validation\ntrain(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, data = Train, method = \"rpart\", trControl = fitControl, tuneGrid = cartGrid )\n\n# Create a new CART model\nStevensTreeCV = rpart(Reverse ~ Circuit + Issue + Petitioner + Respondent + LowerCourt + Unconst, method=\"class\", data = Train, control=rpart.control(cp = 0.18))\n\n# Make predictions\nPredictCV = predict(StevensTreeCV, newdata = Test, type = \"class\")\ntable(Test$Reverse, PredictCV)\n(59+64)/(59+18+29+64)\n\n",
+    "created" : 1399656680279.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "439181342",
+    "id" : "648B4252",
+    "lastKnownWriteTime" : 1399656679,
+    "path" : "C:/Users/rnield/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.IE5/ATFI6SJ5/Week4_SupremeCourt[1].R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

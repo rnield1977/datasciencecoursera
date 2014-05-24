@@ -1,0 +1,17 @@
+{
+    "contents" : "# analysis.R\n# Written by: Robert Nield\n# Date: 5/24/2014\n\n# Function: merge data\n# Parameters: 1 and 2 Datatableds\n# Desscription: Bind 2 datatables together\nlibrary(plyr)\nmergeData <- function(dt1,dt2){\n  return(rbind(dt1,dt2))\n} \n\n\n# Function: getData\n# Parameter: dir is the subdirectory\n# Parameter: x is the filename\n# Description: Read the different dataset files\ngetData <-  function(dir,x){\n  return(read.table(paste0(dir,\"/\",x)))\n}\n\n# Function: getMeanAndStdD\n# Paramter: features is the list of columns for the dataset\n# Paramter: X is the dataset with the columns\n# Description: Create a subset of the data which has just the Mean and STD\n\ngetMeanAndStdD <- function(features,X){\n  xmeancol <- grep('mean\\\\(\\\\)',features[,2])\n  xsd <- grep('std\\\\(\\\\)',features[,2])\n  submean <- X[,c(xmeancol,xsd)]\n  return(submean)\n}\n\n# Function: loadData\n# Description: Loads the data for each dataset.\n\nloadData <- function(){\n  if (!exists(\"mergedX\")){\n    trainingX <- getData(\"test\",\"X_test.txt\")\n    testingX  <- getData(\"train\",\"X_train.txt\") \n    mergedX   <<- mergeData(trainingX,testingX)\n  }\n  if (!exists(\"mergedY\")){\n    trainingY <- getData(\"test\",\"y_test.txt\")\n    testingY  <- getData(\"train\",\"y_train.txt\")\n    mergedY   <<- mergeData(trainingY,testingY)\n  }\n  if(!exists(\"subject\")){\n    \n    subject_train <- getData(\"train\",\"subject_train.txt\")\n    subject_test <- getData(\"test\",\"subject_test.txt\")\n    colnames(subject_train) <- \"subject\"\n    colnames(subject_test) <- \"subject\"\n    subject <<- mergeData(subject_train,subject_test)\n  }  \n}\n\n# Function: getActivities\n# Parameter: of the Activity datasets\n# Description: Sets the activities to the dataset\n\n\ngetActivities <- function(Y){\n  colnames(Y) <- \"activity\"\n  Y$activity[Y$activity == 1] = \"Walking\"\n  Y$activity[Y$activity == 2] = \"Walking_Upstairs\"\n  Y$activity[Y$activity == 3] = \"Walking_Downstairs\"\n  Y$activity[Y$activity == 4] = \"Sitting\"\n  Y$activity[Y$activity == 5] = \"Standing\"\n  Y$activity[Y$activity == 6] = \"Laying\"\n  return(Y)\n}\n\n\n \nloadData() \nfeatures <- getData(\"./\",\"features.txt\")\ncolnames(mergedX) <- features[,2]\nsubMergeX <- getMeanAndStdD(features,mergedX) \nyActivities <- getActivities(mergedY)\ntidystage1 <- cbind(subMergeX,yActivities,subject)\nUCI_Tidy_Dataset <- ddply(tidystage1, .(subject, activity), function(x) colMeans(x[,1:66]))\n\n  ",
+    "created" : 1400712991736.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2848273616",
+    "id" : "B80CCE3A",
+    "lastKnownWriteTime" : 1400965476,
+    "path" : "C:/Users/rnield/Desktop/code/datasciencecoursera/gettingandcleaningdata/project/analysis.R",
+    "project_path" : "analysis.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : true,
+    "type" : "r_source"
+}
