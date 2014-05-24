@@ -80,5 +80,5 @@ subMergeX <- getMeanAndStdD(features,mergedX)
 yActivities <- getActivities(mergedY)
 tidystage1 <- cbind(subMergeX,yActivities,subject)
 UCI_Tidy_Dataset <- ddply(tidystage1, .(subject, activity), function(x) colMeans(x[,1:66]))
-
+write.csv(UCI_Tidy_Dataset, "tidy.txt", row.names=FALSE) 
   
