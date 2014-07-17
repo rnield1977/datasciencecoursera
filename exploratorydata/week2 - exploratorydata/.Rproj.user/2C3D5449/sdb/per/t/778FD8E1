@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1403048058224.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "778FD8E1",
+    "lastKnownWriteTime" : 7741240723082584096,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "gdp_fsc",
+        "contentUrl" : "content?title=gdp_fsc&file=a4341652db2a4a6ab790cfc6e9f61507.htm",
+        "displayedObservations" : "189",
+        "displayedVariables" : 41,
+        "totalObservations" : "189",
+        "variables" : "40"
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

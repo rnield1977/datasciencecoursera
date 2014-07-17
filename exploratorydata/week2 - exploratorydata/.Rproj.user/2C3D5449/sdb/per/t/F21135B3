@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1403048670216.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "F21135B3",
+    "lastKnownWriteTime" : 7741240723082584096,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "amzn",
+        "contentUrl" : "content?title=amzn&file=807729a10a7e4d12827e1260ba169622.htm",
+        "displayedObservations" : "1000",
+        "displayedVariables" : 7,
+        "totalObservations" : "1876",
+        "variables" : "6"
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

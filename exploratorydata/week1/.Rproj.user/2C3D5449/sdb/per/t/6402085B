@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1402590201076.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "6402085B",
+    "lastKnownWriteTime" : 13229740524830817,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "hpc",
+        "contentUrl" : "content?title=hpc&file=dd0fc5a70f2c4b8aaec03d3bb2d77705.htm",
+        "displayedObservations" : "1000",
+        "displayedVariables" : 9,
+        "totalObservations" : "2075259",
+        "variables" : "9"
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

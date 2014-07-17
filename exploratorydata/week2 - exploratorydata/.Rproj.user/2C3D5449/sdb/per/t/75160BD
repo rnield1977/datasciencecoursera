@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1403048428873.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "75160BD",
+    "lastKnownWriteTime" : 7741240723082584096,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "rank90",
+        "contentUrl" : "content?title=rank90&file=96bf76e8a3b845aaae2661404bc60796.htm",
+        "displayedObservations" : "190",
+        "displayedVariables" : 11,
+        "totalObservations" : "190",
+        "variables" : "10"
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

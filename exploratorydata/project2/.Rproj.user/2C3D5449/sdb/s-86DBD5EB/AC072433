@@ -1,0 +1,17 @@
+{
+    "contents" : "#Question 1\nNEI_sum <- aggregate(Emissions ~ year, NEI, sum)\nplot(NEI_sum$year, NEI_sum$Emissions, type=\"l\")\nplot(NEI_sum$year, NEI_sum$Emissions, type=\"l\", xlab=\"Year\", ylab=\"Total Emissions\")\ntitle(\"Emissions by Year\")\n\n#Question 2\nNEI_Baltimore <- subset(NEI, fips == '24510')\nNEI_Baltimore_sum <- aggregate(Emissions ~ year, NEI_Baltimore, sum)\nplot(NEI_Baltimore_sum$year, NEI_Baltimore_sum$Emissions, type=\"l\", xlab=\"Year\", ylab=\"Total Emissions Baltimore\")\n\n#Question 3\nlibrary(ggplot2)\nNEI_Type <- aggregate(Emissions ~ year + type, NEI, sum)\nnt <- ggplot(aes(year,Emissions),data=NEI_Type)\nnt + geom_line() + facet_grid( . ~ type) + xlab(\"Years\") + ggtitle(\"Total Emissions On Type\")\n\n#Question 4\nlibrary(sqldf)\nSCC_COAL_C <- sqldf(\"SELECT SCC FROM SCC where EI_Sector like '%Coal%' AND EI_Sector like '%Comb%'\")\nNEI_COAL_C <- sqldf(sprintf(\"SELECT * from NEI where SCC IN (%s)\",paste(SCC_COAL_C$SCC, collapse=\",\")))\nNEI_COAL_C_Sums <- aggregate(Emissions ~ year, NEI_COAL_C, sum)\nplot(NEI_COAL_C_Sums$year, NEI_COAL_C_Sums$Emissions, type=\"l\", xlab=\"Year\", ylab=\"Total Emissions For Coal Combustion\")\n\n#Question 5\nSCC_Vehicles <- SCC[grepl(\"Vehicles\",SCC$EI.Sector),]\nNEI_Baltimore_Vehicles <- sqldf(sprintf(\"SELECT * from NEI_Baltimore where SCC IN (\\\"%s\\\")\",paste(SCC_Vehicles$SCC, collapse='\",\"')))\nNEI_Baltimore_Vehicles_Sums <- aggregate(Emissions ~ year, NEI_Baltimore_Vehicles, sum)\nplot(NEI_Baltimore_Vehicles_Sums$year, NEI_Baltimore_Vehicles_Sums$Emissions, type=\"l\", xlab=\"Year\", ylab=\"Total Emissions For Vehicles in Boson\")\n\n#Question 6\n\nSCC_Vehicles <- SCC[grepl(\"Vehicles\",SCC$EI.Sector),]\nNEI_Baltimore_Vehicles <- sqldf(sprintf(\"SELECT * from NEI_Baltimore where SCC IN (\\\"%s\\\")\",paste(SCC_Vehicles$SCC, collapse='\",\"')))\nNEI_Baltimore_Vehicles_Sums <- aggregate(Emissions ~ year, NEI_Baltimore_Vehicles, sum)\n\nNEI_California <- subset(NEI, fips == '06037')\nNEI_California_Vehicles <- sqldf(sprintf(\"SELECT * from NEI_California where SCC IN (\\\"%s\\\")\",paste(SCC_Vehicles$SCC, collapse='\",\"')))\nNEI_California_Vehicles_Sums <- aggregate(Emissions ~ year, NEI_California_Vehicles, sum)\n\n\nminX = min(NEI_California_Vehicles_Sums$year, NEI_Baltimore_Vehicles_Sums$year)\nminY = min(NEI_California_Vehicles_Sums$Emissions, NEI_Baltimore_Vehicles_Sums$Emissions)\nmaxX = max(NEI_California_Vehicles_Sums$year, NEI_Baltimore_Vehicles_Sums$year)\nmaxY = max(NEI_California_Vehicles_Sums$Emissions, NEI_Baltimore_Vehicles_Sums$Emissions)\n\nplot(NEI_California_Vehicles_Sums$year, NEI_California_Vehicles_Sums$Emissions, xlim=c(minX, maxX), ylim=c(minY, maxY) ,col=\"blue\", type=\"l\", xlab=\"Year\", ylab=\"Total Emissions For Vehicles in Boson vs California\")\nlines(NEI_Baltimore_Vehicles_Sums$year,NEI_Baltimore_Vehicles_Sums$Emissions, type=\"l\", col=\"red\")\n\n",
+    "created" : 1403904523415.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3655919740",
+    "id" : "AC072433",
+    "lastKnownWriteTime" : 1404249376,
+    "path" : "C:/Users/rnield/Desktop/code/datasciencecoursera/exploratorydata/project2/questions.R",
+    "project_path" : "questions.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

@@ -1,0 +1,17 @@
+{
+    "contents" : "#hpc <- read.csv(unz(\"exdata-data-household_power_consumption.zip\",\"household_power_consumption.txt\"), header=TRUE, sep=\";\")\n#shpc <- subset(hpc, hpc$Date == '2007-02-02' | hpc$Date == '2007-02-01')\n\n#Plot 1 \n#hist(as.numeric(shpc$Global_active_power) / 500, xlab=\"Global Active Power (kilowatts)\", main=\"Global Active Power\", col=\"red\")\n\n#Plot 2\n\nshpc$dat <- as.POSIXct(paste(shpc$Date, shpc$Time), format=\"%Y-%m-%d %H:%M:%S\")\nplot(shpc$dat, as.numeric(shpc$Global_active_power) / 500, type=\"l\", ylab=\"Global Active Power (kilowatts)\", xlab=\"\")\n\n#Plot 3\nplot(shpc$dat, as.numeric(shpc$Sub_metering_1), type=\"n\", ylab=\"Energy sub metering\", xlab=\"\")\nlines(shpc$dat, as.numeric(shpc$Sub_metering_1), col=\"gray\", type=\"l\")\nlines(shpc$dat, as.numeric(shpc$Sub_metering_2), col=\"red\", type=\"l\")\nlines(shpc$dat, as.numeric(shpc$Sub_metering_3), col=\"blue\", type=\"l\")\nlegend(\"topright\",c(\"Sub_metering_1\",\"Sub_metering_2\",\"Sub_metering_3\"),col=c(\"gray\",\"red\",\"blue\"), lwd=1)\n\n#Plot 4\nplot(shpc$dat, as.numeric(shpc$Global_reactive_power) / 10000, ylab=\"Global_reactive_power\", xlab=\"datetime\", type=\"l\", pch=19, cex=0.75)\n\n#Add all together\npar(mfrow=c(2,2))\n#Plot 1 \nhist(as.numeric(shpc$Global_active_power) / 500, xlab=\"Global Active Power (kilowatts)\", main=\"Global Active Power\", col=\"red\")\n\n#Plot 2\n\nshpc$dat <- as.POSIXct(paste(shpc$Date, shpc$Time), format=\"%Y-%m-%d %H:%M:%S\")\nplot(shpc$dat, as.numeric(shpc$Global_active_power) / 500, type=\"l\", ylab=\"Global Active Power (kilowatts)\", xlab=\"\")\n\n#Plot 3\nplot(shpc$dat, as.numeric(shpc$Sub_metering_1), type=\"n\", ylab=\"Energy sub metering\", xlab=\"\")\nlines(shpc$dat, as.numeric(shpc$Sub_metering_1), col=\"gray\", type=\"l\")\nlines(shpc$dat, as.numeric(shpc$Sub_metering_2), col=\"red\", type=\"l\")\nlines(shpc$dat, as.numeric(shpc$Sub_metering_3), col=\"blue\", type=\"l\")\nlegend(\"topright\",c(\"Sub_metering_1\",\"Sub_metering_2\",\"Sub_metering_3\"),col=c(\"gray\",\"red\",\"blue\"), lwd=1)\n\n#Plot 4\nplot(shpc$dat, as.numeric(shpc$Global_reactive_power) / 10000, ylab=\"Global_reactive_power\", xlab=\"datetime\", type=\"l\", pch=19, cex=0.75)\n",
+    "created" : 1402589580210.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1116062940",
+    "id" : "E4D07D40",
+    "lastKnownWriteTime" : 1402957237,
+    "path" : "C:/Users/rnield/Desktop/code/datasciencecoursera/exploratorydata/week1/assignment1.R",
+    "project_path" : "assignment1.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

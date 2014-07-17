@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1402699976892.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "4DA54D9C",
+    "lastKnownWriteTime" : 13229740524830817,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "shpc",
+        "contentUrl" : "content?title=shpc&file=736b183bc4934c99b8c2eaecfb0e3d54.htm",
+        "displayedObservations" : "1000",
+        "displayedVariables" : 10,
+        "totalObservations" : "2880",
+        "variables" : "11"
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}
