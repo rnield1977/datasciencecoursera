@@ -1,8 +1,11 @@
+---
+output: pdf_document
+---
 
 # Statistical Inference Project Part 1 (Simulation)
 ## author: Robert Nield
 
-We will be simulating the exponential distribution in R with `rexp(n, rate)` (from the documentation rexp(n, rate = 1)). The rate will be signified by $\lambda.
+We will be simulating the exponential distribution in R with `rexp(n, rate)` (from the documentation rexp(n, rate = 1)). The rate will be signified by $\lambda$.
 
 * $1/\lambda$ is the mean of the expoential distribution.
 * The standard deviation is $1/\lambda$. 
